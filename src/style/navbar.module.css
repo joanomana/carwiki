@@ -1,0 +1,80 @@
+/* Estilos generales */
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(90deg, #ff8c00, #ff4500);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 20px;
+  gap: 10px;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+.logologo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff8dc;
+}
+
+/* Enlaces de navegación */
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navItem {
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+  font-size: 30px;
+}
+
+.navItem:hover {
+  color: #fff8dc;
+}
+
+/* Search */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0px 20px;
+}
+
+.search:hover {
+  color: #fff8dc;
+}
+
+.searchIcon {
+  font-size: 20px;
+}
