@@ -11,7 +11,7 @@ export default function View() {
             const result = await response.json();
             setData(result.Makes); // Accediendo solo a la propiedad 'Makes'
             console.log(result);
-            
+
         } catch (error) {
             setError(error.message); // Manejar el error
         } finally {
@@ -39,7 +39,7 @@ export default function View() {
                 {data && (
                     <ul>
                         {data.map((make) => (
-                            <li key={make.make_id}>{make.make_display}</li> 
+                            <li key={make.make_id}>{make.make_display}</li>
                         ))}
                     </ul>
                 )}
