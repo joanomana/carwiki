@@ -6,7 +6,7 @@ import Brands from '@/components/Brands';
 import View from '@/components/View';
 
 export default function Home() {
-    const [selectedPage, setSelectedPage] = useState("home");
+    const [selectedPage, setSelectedPage] = useState("view");
 
     const renderContent = () => {
         switch (selectedPage) {

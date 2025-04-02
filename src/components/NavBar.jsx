@@ -3,6 +3,8 @@ import { IoCarSport } from "react-icons/io5";
 import Style from "@/style/navbar.module.css";
 
 export default function Nav({ setSelectedPage }) {
+    function handleSearch() {
+    }
     return (
         <nav className={Style.navbar}>
             <div onClick={()=> setSelectedPage("view")} className={Style.logo}>
@@ -13,10 +15,10 @@ export default function Nav({ setSelectedPage }) {
                 <a onClick={() => setSelectedPage("cars")} className={Style.navItem}>Cars</a>
                 <a onClick={() => setSelectedPage("brands")} className={Style.navItem}>Brands</a>
             </div>
-            <a href="#" className={Style.search}>
+            <div onClick={handleSearch} className={Style.search}>
                 <h2>Search</h2>
                 <CiSearch className={Style.searchIcon} />
-            </a>
+            </div>
         </nav>
     );
 }
