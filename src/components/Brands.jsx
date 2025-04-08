@@ -3,18 +3,32 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Style from "@/style/brands.module.css";
 
-// Lista de marcas con imagen disponible
 const availableBrands = [
+    "abarth",
+    "ac",
+    "acura",
+    "alfa romeo",
+    "alpina",
+    "alpine",
+    "alvis",
+    "amc",
+    "ariel",
+    "ascari",
+    "aston martin",
+    "audi",
+    "austin",
+    "autobianchi",
+    "bentley",
     "berkeley",
     "bitter",
     "bmw",
     "brilliance",
-    "bugatti",
     "bristol",
+    "bugatti",
     "buick",
     "cadillac",
-    "chevrolet",
     "caterham",
+    "chevrolet",
     "chrysler",
     "citroen",
     "daf",
@@ -43,8 +57,8 @@ const availableBrands = [
     "lada",
     "lamborghini",
     "lancia",
-    "lexus",
     "land rover",
+    "lexus",
     "lincoln",
     "lotus",
     "mahindra",
@@ -77,8 +91,8 @@ const availableBrands = [
     "saab",
     "saleen",
     "samsung",
-    "scion",
     "saturn",
+    "scion",
     "seat",
     "simca",
     "singer",
@@ -96,25 +110,11 @@ const availableBrands = [
     "volvo",
     "wartburg",
     "westfield",
-    "xedos",
     "willys-overland",
+    "xedos",
     "zastava",
     "zaz",
-    "zenvo",
-    "abarth",
-    "ac",
-    "acura",
-    "alfa romeo",
-    "alpina",
-    "alpine",
-    "alvis",
-    "amc",
-    "ascari",
-    "ariel",
-    "aston martin",
-    "audi",
-    "austin",
-    "autobianchi"
+    "zenvo"
 ];
 
 export default function Brands() {
@@ -132,11 +132,16 @@ export default function Brands() {
                 }
                 const result = await response.json();
 
-                const filteredBrands = result.Makes.map((brand) => ({
-                    ...brand,
-                    logoUrl: `/brands/${brand.make_display.toLowerCase()}.png`
-                }));
-                
+                const filteredBrands = result.Makes
+                    .filter((brand) =>
+                        availableBrands.includes(brand.make_display.toLowerCase())
+                    )
+                    .map((brand) => ({
+                        ...brand,
+                        logoUrl: `/brands/${brand.make_display.toLowerCase()}.png`
+                    }));
+
+
                 setBrands(filteredBrands);
             } catch (err) {
                 setError(err.message);
@@ -157,8 +162,10 @@ export default function Brands() {
 
     return (
         <div className={Style.container}>
-            <h1>Marcas de Autos</h1>
-            <p>Haz clic en una marca para ver los modelos disponibles.</p>
+            <div className={Style.header}>
+                <h1>Marcas de Autos</h1>
+                <p>Haz clic en una marca para ver los modelos disponibles.</p>
+            </div>
             <div className={Style.brandList}>
                 {brands.map((brand) => (
                     <div

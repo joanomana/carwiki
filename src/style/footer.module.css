@@ -1,0 +1,8 @@
+
+.footer{
+    position: bottom ;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ff8c00, #ff4500);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

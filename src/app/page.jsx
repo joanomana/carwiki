@@ -1,12 +1,22 @@
 'use client';
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Nav from '@/components/NavBar';
 import Cars from '@/components/Cars';
 import Brands from '@/components/Brands';
 import View from '@/components/View';
+import Footer from "@/components/Footer";
 
 export default function Home() {
+    const router = useRouter();
     const [selectedPage, setSelectedPage] = useState("view");
+
+    
+
+    const handleNavigation = (page) => {
+        router.push(`/?page=${page}`);
+        setSelectedPage(page);
+    };
 
     const renderContent = () => {
         switch (selectedPage) {
@@ -21,10 +31,11 @@ export default function Home() {
 
     return (
         <div>
-            <Nav setSelectedPage={setSelectedPage} />
+            <Nav onNavigate={handleNavigation} />
             <main className="main">
                 {renderContent()}
             </main>
+            <Footer/>
         </div>
     );
 }
