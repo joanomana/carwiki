@@ -1,8 +1,44 @@
-
-.footer{
-    position: bottom ;
+.footer {
+    position: bottom;
     bottom: 0;
     width: 100%;
     background: linear-gradient(90deg, #ff8c00, #ff4500);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    z-index: 100;
+  }
+  
+  .footerContent {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px ;
+  }
+  
+  
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .socialIcons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .socialIcons a:hover {
+    color: #000;
+  }
+  
+  .copy {
+    font-size: 0.85rem;
+    color: #f0f0f0;
+  }
+  
