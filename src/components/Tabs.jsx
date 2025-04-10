@@ -38,7 +38,7 @@ export default function CategorySlider() {
             const data = await res.json();
             setOptions(data);
         } catch (error) {
-            console.error("Error al cargar datos:", error);
+            console.error("Error data:", error);
             setOptions([]);
         }
         };

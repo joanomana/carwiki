@@ -163,8 +163,8 @@ export default function Brands() {
     return (
         <div className={Style.container}>
             <div className={Style.header}>
-                <h1>Marcas de Autos</h1>
-                <p>Haz clic en una marca para ver los modelos disponibles.</p>
+                <h1>Cars Brands</h1>
+                <p>Click on a brand to see the available models.</p>
             </div>
             <div className={Style.brandList}>
                 {brands.map((brand) => (
