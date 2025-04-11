@@ -178,7 +178,7 @@ export default function Brands() {
                             alt={brand.make_display}
                             className={Style.brandLogo}
                         />
-                        <p>{brand.make_display}</p>
+                        
                     </div>
                 ))}
             </div>

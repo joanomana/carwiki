@@ -2,19 +2,25 @@
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: hwb(0 96% 4%);
   height: 100vh;
+  width: 100%;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   width: 100%;
   background: linear-gradient(90deg, #ff8c00, #ff4500);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
 .logo {
   display: flex;
@@ -41,10 +47,10 @@
   color: #fff8dc;
 }
 
-
 .navLinks {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 .navItem {
@@ -58,7 +64,6 @@
   color: #fff8dc;
 }
 
-
 .search {
   display: flex;
   align-items: center;
@@ -68,7 +73,6 @@
   font-size: 18px;
   padding: 0px 20px;
   cursor: pointer;
-  color: white;
   transition: color 0.3s ease;
 }
 
@@ -78,4 +82,54 @@
 
 .searchIcon {
   font-size: 20px;
+}
+
+
+.navCarousel {
+  display: none;
+}
+
+
+@media (max-width: 320px) {
+  .navContent {
+    display: none;
+  }
+
+  .navCarousel {
+    display: block;
+    padding: 10px 0;
+    background: linear-gradient(90deg, #ff8c00, #ff4500);
+  }
+
+  .carouselItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .carouselItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .logologo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carouselItem h1 {
+    font-size: 20px;
+  }
+
+  .searchIcon {
+    font-size: 18px;
+  }
 }

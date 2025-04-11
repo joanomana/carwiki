@@ -6,21 +6,14 @@ export default function Footer() {
       <div className={Style.footerContent}>
         <div className={Style.socialIcons}>
           <a
-            href="https://github.com/tu-usuario"
+            href="https://github.com/joanomana"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fab fa-github"></i>
           </a>
           <a
-            href="https://instagram.com/tu-usuario"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/tu-usuario"
+            href="https://www.linkedin.com/in/joan-sebastian-oma%C3%B1a-suarez-52b7a3256/"
             target="_blank"
             rel="noopener noreferrer"
           >
