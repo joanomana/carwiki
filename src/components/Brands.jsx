@@ -125,36 +125,35 @@ export default function Brands() {
 
     useEffect(() => {
         const fetchBrands = async () => {
-            try {
-                const response = await fetch("/api/brands");
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const result = await response.json();
-
-                const filteredBrands = result.Makes
-                    .filter((brand) =>
-                        availableBrands.includes(brand.make_display.toLowerCase())
-                    )
-                    .map((brand) => ({
-                        ...brand,
-                        logoUrl: `/brands/${brand.make_display.toLowerCase()}.png`
-                    }));
-
-
-                setBrands(filteredBrands);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
+        try {
+            const response = await fetch("/api/brands");
+            if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
             }
+            const result = await response.json();
+
+            const filteredBrands = result.Makes
+            .filter((brand) =>
+                availableBrands.includes(brand.make_display.toLowerCase())
+            )
+            .map((brand) => ({
+                ...brand,
+                logoUrl: `/brands/${brand.make_display.toLowerCase()}.png`,
+            }));
+
+            setBrands(filteredBrands);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
         };
 
         fetchBrands();
     }, []);
 
-    const navigateToModels = (makeId) => {
-        router.push(`/cars/${makeId}`);
+    const navigateToBrandDetail = (brandName) => {
+        router.push(`/brands/${encodeURIComponent(brandName.toLowerCase())}`);
     };
 
     if (loading) return <p>Loading...</p>;
@@ -162,29 +161,25 @@ export default function Brands() {
 
     return (
         <div className={Style.container}>
-            <div className={Style.header}>
-                <h1>Cars Brands</h1>
-                <p>Click on a brand to see the available models.</p>
+        <div className={Style.header}>
+            <h1>Cars Brands</h1>
+            <p>Click on a brand to see the available models.</p>
+        </div>
+        <div className={Style.brandList}>
+            {brands.map((brand) => (
+            <div
+                key={brand.make_id}
+                className={Style.brandItem}
+                onClick={() => navigateToBrandDetail(brand.make_display)}
+            >
+                <img
+                src={brand.logoUrl}
+                alt={brand.make_display}
+                className={Style.brandLogo}
+                />
             </div>
-            <div className={Style.brandList}>
-                {brands.map((brand) => (
-                    <div
-                        key={brand.make_id}
-                        className={Style.brandItem}
-                        onClick={() => navigateToModels(brand.make_id)}
-                    >
-                        <img
-                            src={brand.logoUrl}
-                            alt={brand.make_display}
-                            className={Style.brandLogo}
-                        />
-                        
-                    </div>
-                ))}
-            </div>
+            ))}
+        </div>
         </div>
     );
 }
-
-
-

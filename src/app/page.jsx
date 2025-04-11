@@ -1,6 +1,5 @@
 'use client';
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Nav from '@/components/NavBar';
 import Cars from '@/components/Cars';
 import Brands from '@/components/Brands';
@@ -10,13 +9,11 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
     const router = useRouter();
-    const [selectedPage, setSelectedPage] = useState("view");
-
-    
+    const searchParams = useSearchParams();
+    const selectedPage = searchParams.get("page") || "view";
 
     const handleNavigation = (page) => {
         router.push(`/?page=${page}`);
-        setSelectedPage(page);
     };
 
     const renderContent = () => {
@@ -38,7 +35,7 @@ export default function Home() {
             <main className="main">
                 {renderContent()}
             </main>
-            <Footer/>
+            <Footer />
         </div>
     );
 }
