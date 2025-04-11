@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Welcome to CarWiki 👋  
+![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
 
-First, run the development server:
+> **CarWiki** is a responsive web application that integrates the [CarQuery API](https://www.carqueryapi.com/) to display categorized automotive data. Users can explore vehicles by brand, type, fuel, or popularity, view detailed specifications, and leave reviews.
+
+## 🚀 Features
+
+- 🔍 Filter and browse cars by categories (e.g., SUV, sport, fuel type)
+- 🏷 View details of each model using SweetAlert
+- 🏎 Explore top brands and their vehicles
+- 🌟 Add reviews and ratings (stored locally)
+- 📱 Mobile-friendly design with Flicking carousel navigation
+
+## 📦 Tech Stack
+
+- **Next.js** (App Router)
+- **React**
+- **Tailwind CSS**
+- **SweetAlert2**
+- **@egjs/react-flicking**
+- **CarQuery API**
+
+## 📥 Installation
+
+```bash
+npm install
+```
+
+## 🔧 Usage
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open your browser and go to [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🌐 CarQuery API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses the [CarQuery API](https://www.carqueryapi.com/) to fetch real-time automotive data including:
 
-## Learn More
+- Car brands and models
+- Fuel types
+- Vehicle categories
+- Specifications (year, engine, body type, etc.)
 
-To learn more about Next.js, take a look at the following resources:
+## ✍️ Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👤 **Joan Omaña**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- GitHub: [@joanomana](https://github.com/joanomana)
 
-## Deploy on Vercel
+## 🙌 Support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Give a ⭐️ if you liked this project or found it helpful!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
