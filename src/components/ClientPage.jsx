@@ -31,9 +31,9 @@ export default function ClientPage() {
     };
 
     return (
-        <div>
+        <div className="body">
             <Nav onNavigate={handleNavigation} />
-            <main className="main">
+            <main >
                 {renderContent()}
             </main>
             <Footer />
