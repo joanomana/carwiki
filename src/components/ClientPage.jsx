@@ -33,7 +33,7 @@ export default function ClientPage() {
     return (
         <div className="body">
             <Nav onNavigate={handleNavigation} />
-            <main >
+            <main className="main">
                 {renderContent()}
             </main>
             <Footer />
