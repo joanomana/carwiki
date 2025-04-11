@@ -11,6 +11,7 @@ export default function BrandDetail() {
     const [loading, setLoading] = useState(true);
 
     const logoUrl = `/brands/${brand}.png`;
+    const capitalizedBrand = brand.charAt(0).toUpperCase() + brand.slice(1);
 
 
     useEffect(() => {
