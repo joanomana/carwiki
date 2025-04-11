@@ -73,15 +73,28 @@ export default function BrandDetail() {
 
     const showDetails = (vehicle) => {
         Swal.fire({
-            title: `${vehicle.model_name}`,
+            title: `${vehicle.model_name} - ${vehicle.model_trim || ''}`,
             html: `
-                <p><strong>Available Years:</strong> ${vehicle.model_years?.join(", ") || "N/A"}</p>
                 <p><strong>Body Type:</strong> ${vehicle.model_body || "N/A"}</p>
                 <p><strong>Fuel Type:</strong> ${vehicle.model_engine_fuel || "N/A"}</p>
+                <p><strong>Engine:</strong> ${vehicle.model_engine_cc || "N/A"} cc, ${vehicle.model_engine_cyl || "N/A"} cylinders (${vehicle.model_engine_type || "N/A"})</p>
+                <p><strong>Power:</strong> ${vehicle.model_engine_power_ps || "N/A"} PS @ ${vehicle.model_engine_power_rpm || "N/A"} RPM</p>
+                <p><strong>Torque:</strong> ${vehicle.model_engine_torque_nm || "N/A"} Nm @ ${vehicle.model_engine_torque_rpm || "N/A"} RPM</p>
+                <p><strong>Top Speed:</strong> ${vehicle.model_top_speed_kph || "N/A"} km/h</p>
+                <p><strong>Acceleration (0–100 km/h):</strong> ${vehicle.model_0_to_100_kph || "N/A"} seconds</p>
+                <p><strong>Transmission:</strong> ${vehicle.model_transmission_type || "N/A"}</p>
+                <p><strong>Drive Type:</strong> ${vehicle.model_drive || "N/A"}</p>
+                <p><strong>Seating:</strong> ${vehicle.model_seats || "N/A"} seats, ${vehicle.model_doors || "N/A"} doors</p>
+                <p><strong>Weight:</strong> ${vehicle.model_weight_kg || "N/A"} kg</p>
+                <p><strong>Dimensions (L×W×H):</strong> ${vehicle.model_length_mm || "N/A"} × ${vehicle.model_width_mm || "N/A"} × ${vehicle.model_height_mm || "N/A"} mm</p>
+                <p><strong>Fuel Tank Capacity:</strong> ${vehicle.model_fuel_cap_l || "N/A"} liters</p>
+                <p><strong>Available Years:</strong> ${vehicle.model_years?.join(", ") || "N/A"}</p>
             `,
             confirmButtonText: "Close",
+            width: 600,
         });
     };
+    
     
 
     if (loading) return <p className={style.loading}>Loading...{capitalizedBrand}...</p>;
@@ -89,12 +102,13 @@ export default function BrandDetail() {
     return (
 
         <div className={style.container}>
-            <button onClick={() => router.push("/?page=brands")} className={style.backButton}>
-                ← Back
-            </button>
             <div className={style.header}>
-                <img src={logoUrl} alt={brand} className={style.logo} />
-                <h1 className={style.title}>{capitalizedBrand}</h1>
+                <div className={style.brandBackground}>
+                    <button onClick={() => router.push("/?page=brands")} className={style.backButton}>
+                        ← Back
+                    </button>
+                    <img src={logoUrl} alt={brand} className={style.logo} />
+                </div>
                 <p className={style.subtitle}>Available models</p>
             </div>
 
@@ -105,10 +119,8 @@ export default function BrandDetail() {
                     onClick={() => showDetails(car)}
                     className={style.card}
                 >
-                    <h3 className={style.modelName}>{car.model_name}</h3>
-                    <p className={style.modelYear}>
-                        Years: {car.model_years.sort((a, b) => b - a).join(", ")}
-                    </p>
+                    <h3 className={style.modelName}>{car.model_name} {car.model_trim}</h3>
+
                 </div>
             ))}
             </div>
