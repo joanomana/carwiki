@@ -6,6 +6,7 @@ import Brands from '@/components/Brands';
 import View from '@/components/View';
 import Review from '@/components/Review';
 import Footer from "@/components/Footer";
+import "@/style/clientPage.css"
 
 export default function ClientPage() {
     const router = useRouter();
